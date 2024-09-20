@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Here’s a breakdown of how each of these components can be implemented in the MVP:
 
-## Getting Started
+### Data Points for MVP:
 
-First, run the development server:
+1. **Transcription**:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   - **Description**: Convert uploaded audio files into text to provide a readable and searchable version of the conversation.
+   - **Implementation**: Use a transcription service like AWS Transcribe, Google Cloud Speech-to-Text, or any other reliable transcription API.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **User Query**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   - **Description**: Identify and extract the customer’s questions or issues from the conversation transcript.
+   - **Implementation**: Use NLP techniques to detect common question phrases or segments where the customer describes their problem.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Agent Answer**:
 
-## Learn More
+   - **Description**: Extract the agent's response to the user's query, focusing on the resolution provided.
+   - **Implementation**: Use NLP models to distinguish between the customer and agent parts and summarize the agent’s response.
 
-To learn more about Next.js, take a look at the following resources:
+4. **Frequently Mentioned Keywords**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - **Description**: Highlight key topics or issues discussed frequently during the conversation.
+   - **Implementation**: Use keyword extraction algorithms (such as TF-IDF or RAKE) to identify the most frequently mentioned words or phrases.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. **Adherence to SOP: Score**:
 
-## Deploy on Vercel
+   - **Description**: Provide a score indicating how closely the conversation adhered to the company's Standard Operating Procedures (SOP).
+   - **Implementation**: Define key SOP steps and use text-matching or rule-based systems to check for their presence in the transcript. Assign weights to each step to calculate the adherence score.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. **Missed SOP Steps**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   - **Description**: List any SOP steps that were not followed or were missing from the conversation.
+   - **Implementation**: Compare the conversation transcript with a checklist of SOP steps and identify the missing ones.
+
+7. **Completed SOP Steps**:
+
+   - **Description**: List the SOP steps that were successfully followed during the conversation.
+   - **Implementation**: Similar to the "Missed SOP Steps," but list the steps that match the SOP criteria.
+
+8. **Overall Sentiment**:
+
+   - **Description**: Determine the overall sentiment (positive, neutral, or negative) of the conversation.
+   - **Implementation**: Use sentiment analysis models (e.g., VADER, BERT-based models) to analyze the transcript and provide an overall sentiment score.
+
+9. **Talk-to-Listen Ratio**:
+   - **Description**: Calculate the ratio of the time the agent spent talking versus the time the customer spent talking.
+   - **Implementation**: Use speaker diarization to distinguish between speakers and calculate the total speaking time for the agent and the customer.
+
+### Example MVP User Interface Design:
+
+- **Conversation Dashboard**: Display a list of all uploaded conversations with columns for Agent Name, User Query, Adherence to SOP Score, Overall Sentiment, and Frequently Mentioned Keywords.
+- **Detailed Conversation View**:
+  - **Transcription**: Full text transcript with color-coded segments for user queries and agent answers.
+  - **Adherence to SOP**: Score displayed prominently, with expandable sections showing completed and missed SOP steps.
+  - **Keywords**: Tag cloud or list of frequently mentioned keywords.
+  - **Sentiment Analysis**: Sentiment score and a visual indicator (e.g., smiley face or color-coded bar).
+  - **Talk-to-Listen Ratio**: Pie chart or bar graph representing the ratio.

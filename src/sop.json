@@ -1,0 +1,82 @@
+{
+    "HotelCaliforniaSupportTeamQuickReferenceGuide": {
+        "GreetingAndIdentifyingNeeds": {
+            "StartCall": {
+                "Instruction": "Warm greeting.",
+                "Example": "Thank you for calling Hotel California. This is [Your Name], how may I assist you?"
+            },
+            "AskAboutNeeds": {
+                "KeyPoints": [
+                    "Number of guests",
+                    "Room type preferences",
+                    "Desired amenities (Wi-Fi, pool, proximity to beach)",
+                    "Check-in/out dates"
+                ],
+                "ExampleQuestions": [
+                    "How many guests?",
+                    "Any specific room or amenity preferences?"
+                ]
+            }
+        },
+        "PresentingRoomOptions": {
+            "DeluxeKingRoom": {
+                "Details": "King-size bed, Wi-Fi, pool access, free lunch/breakfast",
+                "Rate": "$200/night"
+            },
+            "ClassicKingRoom": {
+                "Details": "King-size bed, Wi-Fi, free breakfast (no pool access)",
+                "Rate": "$125/night"
+            },
+            "GuidanceScript": "Based on your needs, I suggest the Deluxe King Room, which includes [benefits] for $200 per night."
+        },
+        "HandlingObjectionsAndOfferingAlternatives": {
+            "BudgetConcerns": {
+                "Strategy": "Offer more affordable options.",
+                "Example": "For a more budget-friendly choice, consider the Classic King Room, which provides [amenities] without pool access."
+            },
+            "Upsell": "Suggest add-ons like spa services, room service, guided tours."
+        },
+        "SecuringBookings": {
+            "ConfirmBookingDetails": {
+                "Instruction": "Repeat the selected room type, dates, and total cost.",
+                "Example": "To confirm, you have chosen 2 Classic King Rooms for August 18th, totaling $250."
+            },
+            "PaymentProcess": {
+                "Explanation": "Explain secure payment link sent via email (booking@calihotel.com). No credit card info over the phone.",
+                "Example": "You'll receive a payment link from booking@calihotel.com. Only use this link to enter payment details."
+            }
+        },
+        "ConfirmingAndClosing": {
+            "ClarifyAndRecap": {
+                "Instruction": "Repeat all details for confirmation. Spell out emails for accuracy.",
+                "Example": "Just to confirm, booking 2 Classic King Rooms on August 18th for $250 total. Is that correct?"
+            },
+            "CloseCall": {
+                "Instruction": "Offer additional help and thank the guest.",
+                "Example": "Anything else I can assist with today? Thank you for choosing Hotel California!"
+            }
+        },
+        "HandlingCommonScenarios": {
+            "Scenario1": {
+                "Situation": "Budget Issue",
+                "Response": "We have the Classic King Room for $125/night if that suits your needs better."
+            },
+            "Scenario2": {
+                "Situation": "Amenity Preference",
+                "Response": "The Deluxe King Room includes pool access and meals, perfect for a complete experience."
+            },
+            "Scenario3": {
+                "Situation": "Uncertainty",
+                "Response": "Highlight limited availability and the benefits of booking now."
+            }
+        },
+        "KeyPoliciesAndFollowUp": {
+            "CancellationPolicy": "Always mention during booking.",
+            "FollowUp": "If no payment within 24 hours, send a polite reminder.",
+            "EmailSecurityReminder": "Warn guests about phishing—only use links from booking@calihotel.com."
+        },
+        "ContinuousImprovement": {
+            "Instructions": "Stay updated on room availability, promotions, and policies. Use feedback to refine guest interactions regularly."
+        }
+    }
+}
