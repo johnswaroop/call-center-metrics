@@ -45,8 +45,7 @@ const base64ToTempFile = async (base64URL: string, name: string) => {
   );
 
   // Ensure './audio/' directory exists
-  const audioDirectory =
-    "/Users/apple/Documents/Dev/p101/callcenter-metrics/callcenter-metric/audio";
+  const audioDirectory = "./audio";
   if (!fs.existsSync(audioDirectory)) {
     fs.mkdirSync(audioDirectory, { recursive: true });
   }
