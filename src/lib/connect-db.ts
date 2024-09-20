@@ -12,7 +12,7 @@ export default async function connect() {
     connection.on("error", () => {
       console.log("Mongodb connection error");
     });
-  } catch (error: any) {
-    console.log("Mongodb connection error:", error.message);
+  } catch (error) {
+    console.log("Mongodb connection error:", error);
   }
 }
