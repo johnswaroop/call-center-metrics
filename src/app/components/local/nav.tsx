@@ -1,4 +1,4 @@
-import { Bell, FileAudio, Mic, User } from "lucide-react";
+import { Bell, Mic, User } from "lucide-react";
 import Link from "next/link";
 
 export default function Nav() {
@@ -7,20 +7,20 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
+            <Link href={"/"} className="flex-shrink-0 flex items-center">
               <Mic className="h-8 w-8 text-primary" aria-hidden="true" />
               <span className="ml-2 text-2xl font-bold text-primary">
                 SupportAI
               </span>
-            </div>
+            </Link>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link
-                href="#"
+                href="/"
                 className="border-primary text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
                 Dashboard
               </Link>
-              <Link
+              {/* <Link
                 href="#"
                 className="border-transparent text-muted-foreground hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
@@ -32,7 +32,7 @@ export default function Nav() {
                 className="border-transparent text-muted-foreground hover:border-primary hover:text-primary inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
               >
                 Projects
-              </Link>
+              </Link> */}
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">

@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, XCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { ICall } from "@/models/call";
 import { AnimatePresence, motion } from "framer-motion";
+import Nav from "./nav";
 
 interface IResult extends ICall {}
 
@@ -37,9 +38,7 @@ export function ModernTranscriptionResults({
 
   return (
     <div className="container mx-auto p-6 space-y-6 bg-gray-50 min-h-screen">
-      <h1 className="text-3xl font-semibold mb-8 text-center text-gray-700">
-        Transcription Analysis
-      </h1>
+      <Nav />
 
       <Card className="shadow-sm">
         <CardHeader className="border-b border-gray-100">
