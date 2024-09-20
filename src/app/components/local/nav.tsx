@@ -10,7 +10,7 @@ export default function Nav() {
             <Link href={"/"} className="flex-shrink-0 flex items-center">
               <Mic className="h-8 w-8 text-primary" aria-hidden="true" />
               <span className="ml-2 text-2xl font-bold text-primary">
-                SupportAI
+                P:101 CXP
               </span>
             </Link>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">

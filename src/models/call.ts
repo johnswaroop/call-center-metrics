@@ -23,6 +23,7 @@ export interface ICall {
   emailSent: boolean; // Indicates if an email summary was sent to the customer
   emailConfirmed: boolean; // Indicates if the customer confirmed receipt of the email
   userFeedback?: string; // Optional field for user feedback or comments
+  userRating?: number;
 }
 
 const CallSchema = new mongoose.Schema({
@@ -52,6 +53,7 @@ const CallSchema = new mongoose.Schema({
   emailConfirmed: { type: Boolean }, // Indicates if the customer confirmed receipt of the email
   userFeedback: { type: String }, // Optional field for user feedback or comments
   status: { type: ["IN_PROGRESS", "COMPLETED", "FAILED"] },
+  userRating: { type: Number },
 });
 
 export default mongoose.models.Call || mongoose.model("Call", CallSchema);

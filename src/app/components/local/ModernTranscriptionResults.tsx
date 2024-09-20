@@ -88,7 +88,7 @@ export function ModernTranscriptionResults({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card className="shadow-sm">
           <CardHeader className="border-b border-gray-100">
-            <CardTitle className="text-lg font-medium">User Query</CardTitle>
+            <CardTitle className="text-lg font-medium">Caller Query</CardTitle>
           </CardHeader>
           <CardContent className="pt-4">
             <p className="text-gray-600 text-sm">{userQuery}</p>

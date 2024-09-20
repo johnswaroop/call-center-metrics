@@ -18,6 +18,7 @@ import action_summary from "@/actions/gpt/summary";
 import action_keywords from "@/actions/gpt/keywords";
 import action_sop from "@/actions/gpt/sop";
 import { IProcessSteps } from "@/actions/types";
+import sendMail from "@/actions/sendEmail";
 
 export function DialogDemo() {
   const [callName, setcallName] = useState("");
@@ -116,6 +117,7 @@ export function DialogDemo() {
         gen_sop(),
       ]);
       console.log(fulldata);
+      await sendMail(email, res?.dbres._id);
       setprocessSteps({
         Transcription: { active: false, complete: false },
         Summary: { active: false, complete: false },
