@@ -98,10 +98,7 @@ function ProcessingSteps({ processSteps }: { processSteps: IProcessSteps }) {
           );
         })}
       </div>
-      <Progress
-        value={(currentStep / (steps.length - 1)) * 100}
-        className="mt-6"
-      />
+      <Progress value={(currentStep / steps.length) * 100} className="mt-6" />
     </div>
   );
 }

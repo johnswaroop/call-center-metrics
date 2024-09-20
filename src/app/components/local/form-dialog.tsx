@@ -125,6 +125,7 @@ export function DialogDemo() {
       setSelectedFile("");
       setcallName("");
       setemail("");
+      location.reload();
     }
   };
 
