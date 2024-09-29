@@ -19,10 +19,12 @@ import action_keywords from "@/actions/gpt/keywords";
 import action_sop from "@/actions/gpt/sop";
 import { IProcessSteps } from "@/actions/types";
 import sendMail from "@/actions/sendEmail";
+import { Textarea } from "@/components/ui/textarea";
 
 export function DialogDemo() {
   const [callName, setcallName] = useState("");
   const [email, setemail] = useState("");
+  const [sopSteps, setSop] = useState("");
   const [selectedFile, setSelectedFile] = useState<string | ArrayBuffer | null>(
     ""
   );
@@ -102,7 +104,11 @@ export function DialogDemo() {
       };
       const gen_sop = async () => {
         console.log(`generating SOP`);
-        const sop = await action_sop(res?.dbres._id, res?.transcription);
+        const sop = await action_sop(
+          res?.dbres._id,
+          res?.transcription,
+          sopSteps
+        );
         console.log("SOP complete");
         setprocessSteps((st) => {
           st["SOP Processing"].complete = true;
@@ -178,6 +184,18 @@ export function DialogDemo() {
                   value={email}
                   onChange={(e) => {
                     setemail(e.target.value);
+                  }}
+                />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="name" className="text-right">
+                  SOP
+                </Label>
+                <Textarea
+                  placeholder="Enter comma-separated SOP steps"
+                  className="col-span-3"
+                  onChange={(e) => {
+                    setSop(e.target.value);
                   }}
                 />
               </div>

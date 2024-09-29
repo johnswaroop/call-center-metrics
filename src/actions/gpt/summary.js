@@ -8,6 +8,7 @@ const conversationExtraction = z.object({
   summary: z.string(),
   query: z.string(),
   response: z.string(),
+  questions: z.array(z.string())
 });
 
 
@@ -28,7 +29,7 @@ export default async function action_summary(callId, conversation) {
   const prePrompt = [
     {
       role: "system",
-      content: "you are a intelligent transcription service and assistant, the answer should contain summary of the conversation in under 200 words , query: synopsis of the query or question asked by the caller , response :synopsis of the answer or response given in the  conversation by the team. please provide all the asked outputs. give answers into the given structure.",
+      content: "you are a intelligent transcription service and assistant, the answer should contain summary of the conversation in under 200 words , query: synopsis of the query or question asked by the caller , response :synopsis of the answer or response given in the  conversation by the team, questions : list of a all the questions asked by the caller. please provide all the asked outputs. give answers into the given structure.",
     },
     ...messages,
   ];
@@ -44,7 +45,7 @@ export default async function action_summary(callId, conversation) {
 
   if (parsedData) {
     console.log(parsedData)
-    await action_updateCallDetails(callId, { summary: parsedData.summary, userQuery: parsedData.query, agentAnswer: parsedData.response })
+    await action_updateCallDetails(callId, { summary: parsedData.summary, userQuery: parsedData.query, agentAnswer: parsedData.response, questions: parsedData.questions })
     return parsedData
   }
   console.log("failed")
