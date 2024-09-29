@@ -20,6 +20,7 @@ import action_sop from "@/actions/gpt/sop";
 import { IProcessSteps } from "@/actions/types";
 import sendMail from "@/actions/sendEmail";
 import { Textarea } from "@/components/ui/textarea";
+import action_insights from "@/actions/gpt/insights";
 
 export function DialogDemo() {
   const [callName, setcallName] = useState("");

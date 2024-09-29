@@ -139,7 +139,7 @@ const CallList = ({ calls }: { calls: ICall[] }) => {
       <TableHeader>
         <TableRow className="text-base">
           <TableHead>ID</TableHead>
-          <TableHead>Agent Name</TableHead>
+          <TableHead>Call Name</TableHead>
           {/* <TableHead>Query Type</TableHead> */}
           <TableHead>Keywords</TableHead>
           <TableHead>Email Sent</TableHead>

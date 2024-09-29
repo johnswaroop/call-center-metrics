@@ -10,5 +10,6 @@ export const getAllCalls = async () => {
 export const getCallDetails = async (callId: string) => {
   CONNECT_DB();
   const data = await Call.findById(callId);
+  console.log(data);
   return JSON.parse(JSON.stringify(data));
 };

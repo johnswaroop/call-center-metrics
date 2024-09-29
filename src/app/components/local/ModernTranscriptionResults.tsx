@@ -46,6 +46,8 @@ export function ModernTranscriptionResults({
 
   console.log(sopAdherenceScore);
 
+  console.log({ keyInsights });
+
   return (
     <div className="container mx-auto p-6 space-y-6 bg-gray-50 min-h-screen">
       <Nav />
@@ -117,7 +119,7 @@ export function ModernTranscriptionResults({
         </Card>
         <Card className="shadow-sm">
           <CardHeader className="border-b border-gray-100">
-            <CardTitle className="text-lg font-medium">Agent Answer</CardTitle>
+            <CardTitle className="text-lg font-medium">Expert Answer</CardTitle>
           </CardHeader>
           <CardContent className="pt-4">
             <p className="text-gray-600 text-sm">{agentAnswer}</p>

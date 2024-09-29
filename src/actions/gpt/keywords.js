@@ -8,7 +8,8 @@ const supportCallSchema = z.object({
     keywords: z.array(z.string()),
     talk_to_listen_ratio: z.number(),
     sentiment: z.enum(["positive", "neutral", "negative"]),
-    justification: z.string()
+    justification: z.string(),
+    key_insights: z.array(z.string())
 });
 
 
@@ -19,16 +20,23 @@ const openai = new OpenAI({
 const PROMPT = `"Given the transcription of a support call, extract and return the following in JSON format:
 
 1. **Keywords**: List of key terms.
-2. **Talk-to-Listen Ratio**: Ratio of agent to customer talk time as a decimal.
+2. **Talk-to-Listen Ratio**: Ratio of agent to customer talk time as a decimal if there is only one speaker output should be 1.
 3. **Sentiment**: Overall sentiment as positive, neutral, or negative.
 4. **justification** : justification for the sentiment positive, neutral, or negative sight reasons from the text
+5. **Key Insights**: Extract key business and industry insights, including relevant data points, challenges, opportunities, trends, and other business-related observation and rewite it in breif.
 
 Output structure:
 {
   "keywords": ["keyword1", "keyword2", ...],
   "talk_to_listen_ratio": X.XX,
   "sentiment": "positive/neutral/negative",
-  "justification : "justification for for the sentiment positive"
+  "justification : "justification for for the sentiment positive",
+    "key_insights": [
+    "Insight 1",
+    "Insight 2",
+    "Insight 3",
+    "Insight n",
+  ]
 }
  
 follow the provided JSON structure
@@ -62,7 +70,7 @@ export default async function action_keywords(callId, conversation) {
 
     if (parsedData) {
         console.log(parsedData)
-        await action_updateCallDetails(callId, { keywords: parsedData.keywords, talkToListenRatio: parsedData.talk_to_listen_ratio, sentiment: parsedData.sentiment, justification: parsedData.justification })
+        await action_updateCallDetails(callId, { keywords: parsedData.keywords, talkToListenRatio: parsedData.talk_to_listen_ratio, sentiment: parsedData.sentiment, justification: parsedData.justification, keyInsights: parsedData.key_insights })
         return parsedData
     }
     console.log("failed")
