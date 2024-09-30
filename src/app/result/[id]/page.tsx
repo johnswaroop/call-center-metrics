@@ -10,6 +10,5 @@ export default async function Result({
   params: { [label: string]: string };
 }) {
   const callData = (await getCallDetails(params.id)) as ICall;
-
   return <ModernTranscriptionResults {...callData} />;
 }
