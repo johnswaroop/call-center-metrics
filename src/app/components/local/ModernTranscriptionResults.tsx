@@ -169,7 +169,7 @@ export function ModernTranscriptionResults(props: IResult) {
           <Card className="shadow-sm">
             <CardHeader className="border-b border-gray-100">
               <CardTitle className="text-lg font-medium">
-                Expert Answer
+                Agent Response
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-4">
@@ -201,7 +201,7 @@ export function ModernTranscriptionResults(props: IResult) {
           <Card className="shadow-sm md:grid-cols-2">
             <CardHeader className="border-b border-gray-100">
               <CardTitle className="text-lg font-medium">
-                Key Insights
+                Key Caller Concerns
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-4">

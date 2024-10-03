@@ -23,7 +23,7 @@ const PROMPT = `"Given the transcription of a support call, extract and return t
 2. **Talk-to-Listen Ratio**: Ratio of agent to customer talk time as a decimal if there is only one speaker output should be 1.
 3. **Sentiment**: Overall sentiment as positive, neutral, or negative.
 4. **justification** : justification for the sentiment positive, neutral, or negative sight reasons from the text
-5. **Key Insights**: Extract key business and industry insights, including relevant data points, challenges, opportunities, trends, and other business-related observation and rewite it in breif.
+5. **Key Insights**: Identify all the key concerns shared by the caller, and rewrite it in brief..
 
 Output structure:
 {
