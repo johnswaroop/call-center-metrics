@@ -152,7 +152,7 @@ export function ModernTranscriptionResults(props: IResult) {
               </CardTitle>
             </CardHeader>
             <CardContent className="pt-4">
-              <p className="text-gray-600 text-sm">{userQuery}</p>
+              <p className="text-gray-600 text-sm font-bold">{userQuery}</p>
               <ul className="space-y-2 mt-4">
                 {questions!.map((step, index) => (
                   <li key={index} className="flex items-center">
