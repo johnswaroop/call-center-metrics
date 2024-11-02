@@ -1,7 +1,6 @@
 "use server";
 import nodemailer from "nodemailer";
 import action_updateCallDetails from "./updateCallDetails";
-import { rejects } from "assert";
 
 const sendMail = async (email: string, callid: string) => {
   const transporter = nodemailer.createTransport({
